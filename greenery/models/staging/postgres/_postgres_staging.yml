@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: postgres
+    database: dev_db
+    schema: dbt_parkwilliam12gmailcom
+    tables:
+    ##generate model
+      - name: stg_postgres_addresses_new
+      - name: stg_postgres_orders_new
+      - name: stg_postgres_users_new
+      - name: stg_postgres_events_new
+      - name: stg_postgres_order_items_new
+      - name: stg_postgres_products_new
+      - name: stg_postgres_promos_new
