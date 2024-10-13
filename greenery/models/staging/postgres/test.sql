@@ -1,1 +1,0 @@
-select * from {{ source('postgres','stg_postgres_products_new') }}
