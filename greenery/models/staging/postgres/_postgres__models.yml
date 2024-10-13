@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: stg_postgres_addresses_new
+    description: Address of users
+
+  - name: stg_postgres_events_new
+    description: action of events that users took
+
+  - name: stg_postgres_order_items_new
+    description: order items
+
+  - name: stg_postgres_orders_new
+    description: orders
+
+  - name: stg_postgres_products_new
+    description: products
+
+  - name: stg_postgres_promos_new
+    description: promos
+
+  - name: stg_postgres_users_new
+    description: users
