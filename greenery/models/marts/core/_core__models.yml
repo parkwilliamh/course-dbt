@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: dim_products
+    description: Summary information for all products
+    columns:
+      - name: product_guid
+        tests:
+          - unique
+          - not_null
+  - name: fact_order
+    description: Summary information for orders
+    columns:
+      - name: order_guid
+        tests:
+          - unique
+          - not_null

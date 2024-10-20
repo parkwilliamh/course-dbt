@@ -1,0 +1,11 @@
+
+version: 1
+
+models:
+  - name: fact_page_views
+    description: Page view and event information
+    columns:
+      - name: session_guid
+        tests:
+          - unique
+          - not_null

@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: int_session_events_agg
+    description: Summary information for sessions
+    columns:
+      - name: session_guid
+        tests:
+          - unique
+          - not_null

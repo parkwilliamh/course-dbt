@@ -3,21 +3,71 @@ version: 2
 models:
   - name: stg_postgres_addresses_new
     description: Address of users
+    columns:
+      - name: address_id
+        tests:
+          - unique
+          - not_null
 
   - name: stg_postgres_events_new
     description: action of events that users took
+    columns:
+      - name: event_guid
+        tests:
+          - unique
+          - not_null
+      - name: user_guid
+        tests:
+          - relationships:
+              to: ref('stg_postgres_users_new')
+              field: user_guid
+      - name: event_type
+        tests:
+          - accepted_values:
+              values:
+                - checkout
+                - package_shipped
+                - add_to_cart
+                - page_view
 
-  - name: stg_postgres_order_items_new
+  - name: stg_postgres_order_items
     description: order items
+    columns:
+      - name: order_guid
+        tests:
+          - not_null
+      - name: product_guid
+        tests:
+          - not_null
 
   - name: stg_postgres_orders_new
     description: orders
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
 
   - name: stg_postgres_products_new
     description: products
+    columns:
+      - name: product_id
+        tests:
+          - unique
+          - not_null
 
   - name: stg_postgres_promos_new
     description: promos
+    columns:
+      - name: promo_id
+        tests:
+          - unique
+          - not_null
 
   - name: stg_postgres_users_new
     description: users
+    columns:
+      - name: user_id
+        tests:
+          - unique
+          - not_null    
