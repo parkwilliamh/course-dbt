@@ -9,3 +9,10 @@ models:
         tests:
           - unique
           - not_null
+  - name: fact_conversion_rate
+    description: "conversion rate over all sessions"
+  - name: fact_product_conversion_rate
+    description: "conversion rate by product"
+
+
+

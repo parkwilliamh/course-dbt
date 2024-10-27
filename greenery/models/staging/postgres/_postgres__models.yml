@@ -4,7 +4,7 @@ models:
   - name: stg_postgres_addresses_new
     description: Address of users
     columns:
-      - name: address_id
+      - name: address_guid
         tests:
           - unique
           - not_null
@@ -43,15 +43,20 @@ models:
   - name: stg_postgres_orders_new
     description: orders
     columns:
-      - name: order_id
+      - name: order_guid
         tests:
           - unique
           - not_null
+      - name: order_total
+        tests: 
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 10000
 
   - name: stg_postgres_products_new
     description: products
     columns:
-      - name: product_id
+      - name: product_guid
         tests:
           - unique
           - not_null
@@ -59,7 +64,7 @@ models:
   - name: stg_postgres_promos_new
     description: promos
     columns:
-      - name: promo_id
+      - name: promo_guid
         tests:
           - unique
           - not_null
@@ -67,7 +72,7 @@ models:
   - name: stg_postgres_users_new
     description: users
     columns:
-      - name: user_id
+      - name: user_guid
         tests:
           - unique
           - not_null    
