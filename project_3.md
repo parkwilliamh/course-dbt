@@ -43,3 +43,37 @@
 
 # Part 2: We’re getting really excited about dbt macros after learning more about them and want to apply them to improve our dbt project.
 
+## 1. Create a macro to simplify part of a model(s).
+
+I developed a sum_of macro to simplify the fact_page_view table, which I used for aggregating events. To enhance its robustness, I utilized the get_column_values macro from the dbt_utils package to retrieve and aggregate all event values.
+
+# Part 3: We’re starting to think about granting permissions to our dbt models in our snowflake database so that other roles can have access to them.
+
+## 1. Add a post hook to your project to apply grants to the role “reporting”.
+
+This was added in the dbt_project.yml file
+
+# Part 4: After learning about dbt packages, we want to try one out and apply some macros or tests.
+
+1.  In the fact_conversion_rate DBT model, I utilized the log_info macro from the dbt-utils package.
+2.  In the fact_page_views DBT model, I am employing the get_column_values from the dbt-utils package to retrieve all event values and then aggregating them.
+
+# Part 5: After improving our project with all the things that we have learned about dbt, we want to show off our work!
+
+
+# Part 6: dbt Snapshots 
+
+        with change as (
+        select * from dev_db.dbt_parkwilliam12gmailcom.products_snapshot
+        where dbt_valid_to::date ='2024-10-27'
+        )
+        
+        select distinct p.product_id, p.name from dev_db.dbt_parkwilliam12gmailcom.products_snapshot p
+        join change c on c.product_id = p.product_id and c.inventory != p.inventory
+
+
+
+
+
+
+
