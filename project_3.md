@@ -59,9 +59,12 @@ This was added in the dbt_project.yml file
 2.  In the fact_page_views DBT model, I am employing the get_column_values from the dbt-utils package to retrieve all event values and then aggregating them.
 
 # Part 5: After improving our project with all the things that we have learned about dbt, we want to show off our work!
-https://github.com/parkwilliamh/course-dbt/blob/main/week3_lineage.png
+![Week 3 DAG](https://github.com/parkwilliamh/course-dbt/blob/main/week3_lineage.png "DAG Week 3")
+
 
 # Part 6: dbt Snapshots 
+
+![Week 3 DAG](https://github.com/parkwilliamh/course-dbt/blob/main/week3_snapshot.png "DAG Week 3")
 
         with change as (
         select * from dev_db.dbt_parkwilliam12gmailcom.products_snapshot
